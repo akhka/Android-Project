@@ -1,11 +1,9 @@
 package com.example.popularmovies.activities;
 
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -16,20 +14,14 @@ import com.example.popularmovies.R;
 import com.example.popularmovies.model.Movie;
 import com.example.popularmovies.model.Response;
 import com.example.popularmovies.utils.ApiInterface;
-import com.example.popularmovies.utils.CONSTANTS;
+import com.example.popularmovies.utils.Constants;
 import com.example.popularmovies.utils.RecyclerViewOnItemClickListener;
 import com.example.popularmovies.utils.RetrofitHandler;
 import com.example.popularmovies.utils.adapters.MovieListAdapter;
-import com.squareup.picasso.Picasso;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import okhttp3.MediaType;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Retrofit;
@@ -48,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewOnIte
 
     private String jsonResponse;
 
-    //todo: go to CONSTANTS.java to replace the TMDB key
+    //todo: go to Constants.java to replace the TMDB key
 
 
     @Override
@@ -97,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewOnIte
     }
 
     public void getData(){
-        Call<com.example.popularmovies.model.Response> call = api.getResponse(SELECTED, CONSTANTS.TMDB_API_KEY);
+        Call<com.example.popularmovies.model.Response> call = api.getResponse(SELECTED, Constants.TMDB_API_KEY);
         call.enqueue(new Callback<Response>() {
             @Override
             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
@@ -115,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewOnIte
                 recyclerView_movie_list.setLayoutManager(manager);
 
                 for (Movie movie : movies){
-                    System.out.println(movie.getTitle() + ", " + CONSTANTS.BASE_URL + movie.getPosterUrl());
+                    System.out.println(movie.getTitle() + ", " + Constants.BASE_URL + movie.getPosterUrl());
                 }
             }
 

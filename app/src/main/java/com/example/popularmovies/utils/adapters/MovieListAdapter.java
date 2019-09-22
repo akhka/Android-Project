@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.example.popularmovies.R;
 import com.example.popularmovies.model.Movie;
-import com.example.popularmovies.utils.CONSTANTS;
+import com.example.popularmovies.utils.Constants;
 import com.example.popularmovies.utils.RecyclerViewOnItemClickListener;
 import com.squareup.picasso.Picasso;
 
@@ -40,7 +40,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         Movie movie = movies.get(i);
 
-        Picasso.get().load(CONSTANTS.IMAGE_URL + movie.getPosterUrl()).into(viewHolder.imageView_movie_list);
+        Picasso.get().load(Constants.IMAGE_URL + movie.getPosterUrl()).into(viewHolder.imageView_movie_list);
 
         viewHolder.textView_list_title.setText(movie.getTitle());
     }

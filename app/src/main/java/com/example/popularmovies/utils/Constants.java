@@ -2,7 +2,7 @@ package com.example.popularmovies.utils;
 
 import retrofit2.Retrofit;
 
-public class CONSTANTS {
+public class Constants {
 
     public static final String TMDB_API_KEY = "your TMDB key"; //todo: replace with your own key here
     public static final String BASE_URL = "https://api.themoviedb.org";

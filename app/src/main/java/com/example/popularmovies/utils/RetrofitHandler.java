@@ -9,7 +9,7 @@ public class RetrofitHandler {
         Retrofit retrofitHolder;
         if (retrofit == null){
             retrofitHolder = new Retrofit.Builder()
-                    .baseUrl(CONSTANTS.BASE_URL)
+                    .baseUrl(Constants.BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             retrofit = retrofitHolder;

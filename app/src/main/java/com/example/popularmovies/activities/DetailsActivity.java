@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.popularmovies.R;
-import com.example.popularmovies.utils.CONSTANTS;
+import com.example.popularmovies.utils.Constants;
 import com.squareup.picasso.Picasso;
 
 public class DetailsActivity extends AppCompatActivity {
@@ -41,7 +41,7 @@ public class DetailsActivity extends AppCompatActivity {
         textView_detail_avgRate = findViewById(R.id.textView_detail_avgRate);
         textView_detail_release = findViewById(R.id.textView_detail_release);
 
-        Picasso.get().load(CONSTANTS.IMAGE_URL + posterUrl).into(imageView_detail);
+        Picasso.get().load(Constants.IMAGE_URL + posterUrl).into(imageView_detail);
         textView_detail_title.setText(title);
         textView_detail_overview.setText(overview);
         textView_detail_avgRate.setText(voteAverage + "   of   10");
